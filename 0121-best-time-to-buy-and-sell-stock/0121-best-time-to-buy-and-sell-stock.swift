@@ -21,5 +21,3 @@ class Solution {
         return arr.count == 0 ? 0 : arr.map { $0.1 - $0.0 }.max()!
     }
 }
-
-Solution().maxProfit([7,1,5,3,6,4])
