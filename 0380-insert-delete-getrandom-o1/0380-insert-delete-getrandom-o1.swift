@@ -32,6 +32,6 @@ class RandomizedSet {
     }
     
     func getRandom() -> Int {
-        return arr.randomElement()!
+        return arr[Int.random(in: 0..<arr.count)]
     }
 }
