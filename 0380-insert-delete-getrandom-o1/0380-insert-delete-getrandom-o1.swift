@@ -1,26 +1,20 @@
 
 class RandomizedSet {
-    var arr = [Int]()
+    var arr = Set<Int>()
 
     init() {
     }
     
     func insert(_ val: Int) -> Bool {
-        if arr.contains(val) {
-            return false
-        } else {
-            arr.append(val)
-            return true
-        }
+        let count = arr.count
+        arr.insert(val)
+        return count == arr.count ? false : true
     }
     
     func remove(_ val: Int) -> Bool {
-        if arr.contains(val) {
-            arr.removeAll { $0 == val }
-            return true
-        } else {
-            return false
-        }
+        let count = arr.count
+        arr.remove(val)
+        return count == arr.count ? false : true
     }
     
     func getRandom() -> Int {
