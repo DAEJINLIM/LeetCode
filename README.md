@@ -28,10 +28,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Hash Table
 |  |
 | ------- |
+| [0013-roman-to-integer](https://github.com/DAEJINLIM/LeetCode/tree/master/0013-roman-to-integer) |
 | [0380-insert-delete-getrandom-o1](https://github.com/DAEJINLIM/LeetCode/tree/master/0380-insert-delete-getrandom-o1) |
 ## Math
 |  |
 | ------- |
+| [0013-roman-to-integer](https://github.com/DAEJINLIM/LeetCode/tree/master/0013-roman-to-integer) |
 | [0380-insert-delete-getrandom-o1](https://github.com/DAEJINLIM/LeetCode/tree/master/0380-insert-delete-getrandom-o1) |
 ## Design
 |  |
@@ -49,4 +51,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0274-h-index](https://github.com/DAEJINLIM/LeetCode/tree/master/0274-h-index) |
+## String
+|  |
+| ------- |
+| [0013-roman-to-integer](https://github.com/DAEJINLIM/LeetCode/tree/master/0013-roman-to-integer) |
 <!---LeetCode Topics End-->
