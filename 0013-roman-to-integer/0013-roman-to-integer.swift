@@ -1,8 +1,8 @@
 class Solution {
-    func romanToInt(_ s: String) -> Int {
-        var sum = 0
-        var lastNum = 0
+    var sum = 0
+    var lastNum = 0
 
+    func romanToInt(_ s: String) -> Int {
         for char in s {
             var num = 0
             if char == "I" {
