@@ -29,8 +29,7 @@ class Solution {
                     lastNum = num
                     sum += num
                 } else {
-                    sum -= lastNum
-                    sum += num - lastNum
+                    sum += num - (2 * lastNum)
                 }
             }
         }
