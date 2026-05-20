@@ -26,11 +26,11 @@ class Solution {
                 sum += num
             } else {
                 if lastNum >= num {
-                    lastNum = num
                     sum += num
                 } else {
                     sum += num - (2 * lastNum)
                 }
+                lastNum = num
             }
         }
         return sum
