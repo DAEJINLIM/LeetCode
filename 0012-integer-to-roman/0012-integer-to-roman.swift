@@ -15,20 +15,17 @@ class Solution {
             (4, "IV"),
             (1, "I")
         ]
+
         var num = num
         var roman = ""
-        
-        while num != 0 {
-            for i in romans {
-                while num >= i.0 {
-                    roman.append(i.1)
-                    num -= i.0
-                }
+
+        for (value, symbol) in romans {
+            while num >= value {
+                roman += symbol
+                num -= value
             }
         }
 
         return roman
     }
 }
-
-print(Solution().intToRoman(3749))
