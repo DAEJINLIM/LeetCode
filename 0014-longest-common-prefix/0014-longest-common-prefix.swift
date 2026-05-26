@@ -1,19 +1,28 @@
 class Solution {
     func longestCommonPrefix(_ strs: [String]) -> String {
+        guard let first = strs.first else { return "" }
 
-        guard let first = strs.first, !first.isEmpty else {
-            return ""
-        }
+        var prefix = ""
 
-        for i in 1...first.count {
-            
-            if strs.filter { $0.prefix(i) == first.prefix(i) }.count == strs.count {
-                continue
-            } else {
-                return String(first.prefix(i - 1))
+        for i in 0..<first.count {
+            let index = first.index(first.startIndex, offsetBy: i)
+            let char = first[index]
+
+            for str in strs {
+                if i >= str.count {
+                    return prefix
+                }
+
+                let strIndex = str.index(str.startIndex, offsetBy: i)
+
+                if str[strIndex] != char {
+                    return prefix
+                }
             }
+
+            prefix.append(char)
         }
 
-        return first
+        return prefix
     }
 }
