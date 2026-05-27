@@ -3,15 +3,9 @@ class Solution {
         let count = ratings.count
         var arr = Array(repeating: 1, count: count)
 
-        for i in (0..<count) {
-            if i == 0 {
-                if ratings[i+1] < ratings[i] {
-                    arr[i] += 1
-                }
-            } else {
-                if ratings[i-1] < ratings[i] {
-                    arr[i] = arr[i-1] + 1
-                }
+        for i in 1..<count {
+            if ratings[i-1] < ratings[i] {
+                arr[i] = arr[i-1] + 1
             }
         }
 
