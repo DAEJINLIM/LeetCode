@@ -16,14 +16,8 @@ class Solution {
         }
 
         for i in stride(from: count - 2, through: 0, by: -1) {
-            if i == (count-1) {
-                if ratings[i-1] < ratings[i] {
-                    arr[i] = arr[i-1] + 1
-                }
-            } else {
-                if ratings[i+1] < ratings[i] {
-                    arr[i] = max(arr[i], arr[i+1] + 1)
-                }
+            if ratings[i+1] < ratings[i] {
+                arr[i] = max(arr[i], arr[i+1] + 1)
             }
         }
 
