@@ -1,6 +1,6 @@
 class Solution {
     func isPalindrome(_ s: String) -> Bool {
-        let s = s.filter { $0.isLetter || $0.isNumber }.map { $0.lowercased() }
+        let s = Array(s.lowercased().filter { $0.isLetter || $0.isNumber })
         var left = 0
         var right = s.count - 1
 
