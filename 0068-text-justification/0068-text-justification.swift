@@ -18,7 +18,6 @@ class Solution {
                 result.append(text.joined())
                 text = [word]
             }
-            print(text)
         }
 
         let last = text.joined(separator: " ")
