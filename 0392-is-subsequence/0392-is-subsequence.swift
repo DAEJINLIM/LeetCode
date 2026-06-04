@@ -1,15 +1,18 @@
 class Solution {
     func isSubsequence(_ s: String, _ t: String) -> Bool {
-        var lastIndex = t.startIndex
+        let s = Array(s)
+        let t = Array(t)
 
-        for char in s {
-            guard let currentIndex = t[lastIndex...].firstIndex(of: char) else {
-                return false
+        var i = 0
+        var j = 0
+
+        while i < s.count && j < t.count {
+            if s[i] == t[j] {
+                i += 1
             }
-
-            lastIndex = t.index(after: currentIndex)
+            j += 1
         }
 
-        return true
+        return i == s.count
     }
 }
