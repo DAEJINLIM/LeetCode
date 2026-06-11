@@ -1,7 +1,5 @@
 class Solution {
     func lengthOfLongestSubstring(_ s: String) -> Int {
-        if s == "" { return 0 }
-        if s == " " { return 1 }
 
         let s = Array(s)
         var word = Set<Character>()
