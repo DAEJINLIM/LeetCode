@@ -19,7 +19,8 @@ class Solution {
 
                     for a in 0..<3 {
                         for b in 0..<3 {
-                            if board[a+x][b+y] != "." && a+x != i && b+y != j && board[a+x][b+y] == board[i][j] {
+                            if (a + x != i || b + y != j) &&
+                                board[a + x][b + y] == board[i][j] {
                                 return false
                             }
                         }
