@@ -1,31 +1,26 @@
 class Solution {
     func isValidSudoku(_ board: [[Character]]) -> Bool {
+        var row = Array(repeating: Set<Character>(), count: 9)
+        var col = Array(repeating: Set<Character>(), count: 9)
+        var boxs = Array(repeating: Set<Character>(), count: 9)
 
         for i in 0..<9 {
             for j in 0..<9 {
-                if board[i][j] != "." {
-                    for r in 0..<9 {
-                        if r != i && board[r][j] == board[i][j] {
-                            return false
-                        }
-                    }
-                    for c in 0..<9 {
-                        if c != j && board[i][c] == board[i][j] {
-                            return false
-                        }
-                    }
+                let num = board[i][j] 
 
-                    let (x, y) = (i / 3 * 3, j / 3 * 3)
-
-                    for a in 0..<3 {
-                        for b in 0..<3 {
-                            if (a + x != i || b + y != j) &&
-                                board[a + x][b + y] == board[i][j] {
-                                return false
-                            }
-                        }
-                    }
+                if num == "." {
+                    continue
                 }
+
+                let box = i / 3 * 3 + j / 3
+                
+                if row[i].contains(num) || col[j].contains(num) || boxs[box].contains(num) {
+                    return false
+                }
+
+                row[i].insert(num)
+                col[j].insert(num)
+                boxs[box].insert(num)
             }
         }
 
