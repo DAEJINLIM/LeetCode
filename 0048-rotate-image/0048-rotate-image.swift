@@ -3,9 +3,10 @@ class Solution {
         let count = matrix.count
 
         for i in 0..<count {
-            for j in 0..<count {
-                let num = matrix[i].removeFirst()
-                matrix[j].append(num)
+            for j in i+1..<count {
+                let temp = matrix[i][j]
+                matrix[i][j] = matrix[j][i]
+                matrix[j][i] = temp
             }
         }
 
