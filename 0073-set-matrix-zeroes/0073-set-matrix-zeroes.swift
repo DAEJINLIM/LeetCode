@@ -2,30 +2,28 @@ class Solution {
     func setZeroes(_ matrix: inout [[Int]]) {
         let rowM = matrix.count
         let colM = matrix[0].count
-        var row = [Int]()
-        var col = [Int]()
-        var zeros = [(Int,Int)]()
+
+        var rows = Set<Int>()
+        var cols = Set<Int>()
 
         for i in 0..<rowM {
             for j in 0..<colM {
                 if matrix[i][j] == 0 {
-                    zeros.append((i,j))
+                    rows.insert(i)
+                    cols.insert(j)
                 }
             }
         }
 
-        for (i,j) in zeros {
-            if !row.contains(i) {
-                row.append(i)
-                for c in 0..<colM {
-                    matrix[i][c] = 0
-                }
+        for r in rows {
+            for c in 0..<colM {
+                matrix[r][c] = 0
             }
-            if !col.contains(j) {
-                col.append(j)
-                for r in 0..<rowM {
-                    matrix[r][j] = 0
-                }
+        }
+
+        for c in cols {
+            for r in 0..<rowM {
+                matrix[r][c] = 0
             }
         }
     }
