@@ -1,22 +1,10 @@
 class Solution {
     func spiralOrder(_ matrix: [[Int]]) -> [Int] {
-        let width = matrix[0].count - 1
-        let height = matrix.count - 1
         var result = [Int]()
         var top = 0
-        var bottom = height
+        var bottom = matrix.count - 1
         var left = 0
-        var right = width
-        var x = 0 {
-            didSet {
-                print("x: \(x), y: \(y)")
-            }
-        }
-        var y = 0 {
-            didSet {
-                print("x: \(x), y: \(y)")
-            }
-        }
+        var right = matrix[0].count - 1
 
         while true {
             for col in left...right {
