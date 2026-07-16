@@ -1,6 +1,5 @@
 class Solution {
     func isIsomorphic(_ s: String, _ t: String) -> Bool {
-        if s == t { return true }
 
         var dicS = [Character: Character]()
         var dicT = [Character: Character]()
