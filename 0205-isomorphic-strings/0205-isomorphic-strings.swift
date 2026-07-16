@@ -23,6 +23,6 @@ class Solution {
             }
         }
         
-        return String(s.map { dicS[$0]! }) == t
+        return true
     }
 }
