@@ -1,7 +1,5 @@
 class Solution {
     func groupAnagrams(_ strs: [String]) -> [[String]] {
-        if strs == [""] { return [[""]] }
-
         var groups = [String:[String]]()
         
         for str in strs {
