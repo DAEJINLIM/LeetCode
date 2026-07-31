@@ -5,9 +5,7 @@ class Solution {
         var lastPoint = arr[0][1]
 
         for i in 1..<arr.count {
-            if lastPoint >= arr[i][0] {
-                lastPoint = min(arr[i][1], lastPoint)
-            } else {
+            if lastPoint < arr[i][0] {
                 count += 1
                 lastPoint = arr[i][1]
             }
