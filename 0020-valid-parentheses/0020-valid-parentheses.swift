@@ -1,22 +1,23 @@
 class Solution {
     func isValid(_ s: String) -> Bool {
         if s.count % 2 == 1 { return false }
-
-        var str = [Character]()
+        let map: [Character: Character] = [
+            ")": "(",
+            "}": "{",
+            "]": "["
+        ]
+        var stack = [Character]()
 
         for i in s {
-            if i == "(" || i == "{" || i == "[" {
-                str.append(i)
-            } else {
-                if str.isEmpty { return false }
-
-                let last = str.removeLast()
-                if i == ")" && last != "(" || i == "}" && last != "{"  || i == "]" && last != "[" {
+            if let open = map[i] {
+                guard let last = stack.popLast(), last == open else {
                     return false
                 }
+            } else {
+                stack.append(i)
             }
         }
 
-        return str.isEmpty
+        return stack.isEmpty
      }
 }
