@@ -9,7 +9,7 @@ class Solution {
                 str.append(i)
             } else {
                 if str.count == 0 { return false }
-                
+
                 let last = str.removeLast()
                 if i == ")" && last != "(" || i == "}" && last != "{"  || i == "]" && last != "[" {
                     return false
@@ -17,6 +17,6 @@ class Solution {
             }
         }
 
-        return str.count > 0 ? false : true
+        return str.isEmpty
      }
 }
