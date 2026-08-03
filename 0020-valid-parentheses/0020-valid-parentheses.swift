@@ -8,7 +8,7 @@ class Solution {
             if i == "(" || i == "{" || i == "[" {
                 str.append(i)
             } else {
-                if str.count == 0 { return false }
+                if str.isEmpty { return false }
 
                 let last = str.removeLast()
                 if i == ")" && last != "(" || i == "}" && last != "{"  || i == "]" && last != "[" {
