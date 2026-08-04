@@ -9,11 +9,7 @@ class MinStack {
     
     func push(_ value: Int) {
         stack.append(value)
-        if let last = minStack.last {
-            minStack.append(min(last, value))
-        } else {
-            minStack.append(value)
-        }
+        minStack.append(min(value, minStack.last ?? value))
     }
     
     func pop() {
