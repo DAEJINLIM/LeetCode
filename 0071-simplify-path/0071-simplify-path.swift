@@ -11,10 +11,10 @@ class Solution {
                     result.removeLast()
                 }
             } else {
-                result.append("/\(i)")
+                result.append(String(i))
             }
         }
         
-        return result.isEmpty ? "/" : result.joined()
+        return "/" + result.joined(separator: "/")
     }
 }
