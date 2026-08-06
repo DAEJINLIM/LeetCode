@@ -26,6 +26,6 @@ class Solution {
             }
         }
 
-        return stack.first ?? Int(tokens.first!)!
+        return stack.last!
     }
 }
