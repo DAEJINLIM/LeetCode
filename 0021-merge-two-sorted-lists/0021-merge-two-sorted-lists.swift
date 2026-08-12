@@ -12,10 +12,10 @@ class Solution {
     func mergeTwoLists(_ list1: ListNode?, _ list2: ListNode?) -> ListNode? {
         var node1 = list1
         var node2 = list2
-        
-        let dummy = ListNode(0)
-        var current = dummy
-        
+
+        let start = ListNode(0)
+        var current = start
+
         while node1 != nil && node2 != nil {
             if node1!.val <= node2!.val {
                 current.next = node1
@@ -24,16 +24,16 @@ class Solution {
                 current.next = node2
                 node2 = node2?.next
             }
-            
+
             current = current.next!
         }
-        
+
         if node1 != nil {
             current.next = node1
         } else {
             current.next = node2
         }
-        
-        return dummy.next
+
+        return start.next
     }
 }
