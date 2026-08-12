@@ -1,14 +1,12 @@
 class Solution {
     func calculate(_ s: String) -> Int {
-        let arr = s.filter { $0 != " " }
-        if let n = Int(arr) { return n }
         var result = 0
         var num = 0
         var sign = 1
         var stack = [Int]()
         
-        for char in arr {
-            if let n = Int(String(char)) {
+        for char in s {
+            if let n = char.wholeNumberValue {
                 num = num * 10 + n
                 
             } else if char == "+" {
