@@ -8,9 +8,8 @@ class Solution {
         var stack = [Int]()
         
         for char in arr {
-
-            if let digit = char.wholeNumberValue {
-                num = num * 10 + digit
+            if let n = Int(String(char)) {
+                num = num * 10 + n
                 
             } else if char == "+" {
                 result += num * sign
