@@ -6,7 +6,7 @@ class Solution {
         var stack = [Int]()
         
         for char in s {
-            if let n = char.wholeNumberValue {
+            if let n = Int(String(char)) {
                 num = num * 10 + n
                 
             } else if char == "+" {
