@@ -1,0 +1,47 @@
+class Solution {
+    func calculate(_ s: String) -> Int {
+        let arr = s.filter { $0 != " " }
+        if let n = Int(arr) { return n }
+        var result = 0
+        var num = 0
+        var sign = 1
+        var stack = [Int]()
+        
+        for char in arr {
+
+            if let digit = char.wholeNumberValue {
+                num = num * 10 + digit
+                
+            } else if char == "+" {
+                result += num * sign
+                num = 0
+                sign = 1
+                
+            } else if char == "-" {
+                result += num * sign
+                num = 0
+                sign = -1
+                
+            } else if char == "(" {
+                stack.append(result)
+                stack.append(sign)
+                
+                result = 0
+                sign = 1
+                
+            } else if char == ")" {
+                result += num * sign
+                num = 0
+                
+                let previousSign = stack.removeLast()
+                let previousResult = stack.removeLast()
+                
+                result = previousResult + previousSign * result
+            }
+        }
+        
+        result += num * sign
+        
+        return result
+    }
+}
