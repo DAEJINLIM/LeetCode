@@ -26,13 +26,41 @@ class Solution {
         // 2. next, random 연결
         current = head
         
-        while let node = current {
-            map[node]!.next = node.next.flatMap { map[$0] }
-            map[node]!.random = node.random.flatMap { map[$0] }
-            
-            current = node.next
-        }
+
         
-        return head.flatMap { map[$0] }
+
+        while let node = current {
+
+            if let next = node.next {
+
+                map[node]!.next = map[next]
+
+            }
+
+            
+
+            if let random = node.random {
+
+                map[node]!.random = map[random]
+
+            }
+
+            
+
+            current = node.next
+
+        }
+
+        
+
+        if let head = head {
+
+            return map[head]
+
+        }
+
+        
+
+        return nil
     }
 }
